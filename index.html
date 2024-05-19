@@ -14,6 +14,7 @@
         }
         body {
             background: transparent;
+            overflow: hidden;
         }
         p {
             margin: 0;
@@ -24,7 +25,7 @@
             display: flex;
             flex-direction: column;
         }
-        input, textarea {
+        input, textarea, select {
             width: 1fr;
             padding: 10px 10px;
             font-size: 16px;
@@ -38,15 +39,16 @@
         }
         textarea {
             width: 100%;
-            resize: none;
+            resize: vertical;
             box-sizing: border-box;
+            max-height: 150px;
         }
         button {
             width: 100%;
             border: none;
             border-radius: 5px;
             padding: 25px 10px;
-            background-color: #3759D8;
+            background-color: #1B2A3E;
             color: white;
             font-size: 26px;
             cursor: pointer;
@@ -54,7 +56,10 @@
             margin-top: 20px;
         }
         button:hover {
-            background-color: #264099;
+            background-color: #27384e;
+        }
+        button:active {
+            transform: scale(0.95);
         }
         .radios input {
             width: auto;
@@ -85,50 +90,60 @@
 
 </head>
 <body>
-    <form action="https://formsubmit.co/superstuff8963@gmail.com" method="post">
+    <form action="https://formsubmit.co/leads@eucanada.org" method="post">
 
         <div class="name-container">
             <div class="input-container">
-                <label for="firstName">First Name</label>
-                <input required name="firstName" type="text">
+                <label for="First Name">First Name</label>
+                <input required name="First Name" type="text">
             </div>
             <div class="input-container">
-                <label for="lastName">Last Name</label>
-                <input required name="lastName" type="text">
+                <label for="Last Name">Last Name</label>
+                <input required name="Last Name" type="text">
             </div>
 
         </div>
 
         <div class="input-container">
-            <label for="email">Email</label>
-            <input required name="email" type="email">
+            <label for="Email">Email</label>
+            <input required name="Email" type="email">
         </div>
 
         <div class="input-container">
-            <label for="number">Phone Number</label>
-            <input required type="text" name="phone">
+            <label for="Phone number">Phone Number</label>
+            <input required type="text" name="Phone number">
         </div>
         
         <div class="input-container">
-            <label for="time">Preferred Time To Reach You By Phone</label>
-            <input required type="time" name="time">
+            <label for="Preferred Time">Preferred Time To Reach You By Phone</label>
+            <select required name="Preferred Time">
+                <option value>Select Time of the Day</option>
+                <option value="10am to 12pm">10am to 12pm</option>
+                <option value="12pm to 2pm">12pm to 2pm</option>
+                <option value="2pm to 4pm">2pm to 4pm</option>
+                <option value="4pm to 6pm">4pm to 6pm</option>
+            </select>
         </div>
 
         <div class="input-container">
-            <label for="lang">Preferred Language</label>
-            <input required type="text" name="lang">
+            <label for="Preferred Language">Preferred Language</label>
+            <input required type="text" name="Preferred Language">
         </div>
         
+        <div class="input-container">
+            <label for="common-law partner">Are you or your spouse/common-law partner a Canadian Citizen or Permanent Resident?</label>
+            <input required type="text" name="common-law partner">
+        </div>
 
         <div class="radios">
             <p>Are you Canadian</p>
-        <input required type="radio" name="canadian" value="Yes"><label for="canadian">Yes</label>
-        <input required type="radio" name="canadian" value="No"><label for="canadian">No</label>
+        <input required type="radio" name="Are you Canadian" value="Yes"><label for="Are you Canadian">Yes</label>
+        <input required type="radio" name="Are you Canadian" value="No"><label for="Are you Canadian">No</label>
         </div>
 
         <div class="input-container">
-            <label for="message">How can we Help you</label>
-            <textarea name="message"></textarea>
+            <label for="Message">How can we Help you</label>
+            <textarea name="Message" maxlength="500"></textarea>
         </div>
 
         <button type="submit">BOOK A FREE CONSULTATION</button>
